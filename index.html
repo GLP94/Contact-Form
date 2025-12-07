@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <title>Frontend Mentor | Contact form</title>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form action="#">
+      <div class="nameInputArea">
+        <p>First Name<span class="green"> *</span></p>
+        <input type="text" id="nameInput" required></input>
+        <p class="req">This field is required</p>
+      </div>
+      
+      <div class="lastNameInputArea">
+        <p>Last Name<span class="green"> *</span></p>
+        <input type="text"  id="lastNameInput" required></input>
+        <p class="req">This field is required</p>
+      </div>
+    
+      <div class="emailInpuitArea">
+        <p>Email Address<span class="green"> *</span></p>
+        <input type="email"  id="emailInput" required></input>
+        <p class="req">This field is required</p>
+        <p class="reqEmail">Please enter a valid email address</p>
+      </div>
+
+      <div class="queryRadiosArea">
+        <p>Query Type<span class="green"> *</span></p>
+        <div class="queryFlex">
+          <label><input type="radio" name="query" required>General Enquiry</input></label>
+          <label><input type="radio" name="query">Support Request</input></label>
+        </div>
+        <p class="req">Please select a query type</p>
+      </div>
+      
+      <div class="messageArea">
+        <p>Message<span class="green"> *</span></p>
+        <textarea required></textarea>
+        <p class="req">This field is required</p>
+      </div>
+
+      <div class="checkboxConsentArea">
+        <label for="consentCheck" class="gridCheck">
+          <input type="checkbox" id="consentCheck"></input>
+          <p>I consent to being contacted by the team<span class="green"> *</span></p>
+        </label>
+        <p class="req">To submit this form, please consent to being contacted</p>
+      </div>
+
+      <input type="submit" value="Submit" class="submitButton"></input>
+    </form>
+  </div>
+
+  <div class="success">
+    <div>
+      <img src="./assets/images/icon-success-check.svg"/><p>Message Sent!</p>
+    </div>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

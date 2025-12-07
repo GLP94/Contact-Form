@@ -1,0 +1,271 @@
+:root{
+--Green-200: hsl(148, 38%, 91%);
+--Green-600: hsl(169, 82%, 27%);
+--Red: hsl(0, 66%, 54%);
+--White: hsl(0, 0%, 100%);
+--Grey-500: hsl(186, 15%, 59%);
+--Grey-900: hsl(187, 24%, 22%);
+}
+
+@font-face{
+    font-family: "Karla";
+    src:
+        local("Karla"),
+        url("./assets/fonts/static/Karla-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: "Karla";
+    src:
+        local("Karla"),
+        url("./assets/fonts/static/Karla-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    font-family: "Karla", sans-serif;
+    background-color: var(--Green-200);
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+
+h1,
+p,
+label{
+    color: var(--Grey-900);
+}
+
+h1{
+    margin-bottom: 1rem;
+}
+
+.green{
+    color: var(--Green-600);
+}
+
+input[type="text"],
+input[type="email"],
+textarea{
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--Green-600);
+}
+
+textarea{
+    height: 15rem;
+}
+
+.req,
+.reqEmail{
+    display: none;
+    color: var(--Red);
+    margin-top: 0.5rem;
+    &:last-of-type{
+        margin: 0;
+    }
+}
+
+/* Container */
+
+.container{
+    width: 100%;
+    max-width: 40rem;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color: var(--White);
+}
+
+p:not(.req, .gridCheck, .success){
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Query */
+
+.queryRadiosArea{
+    display: flex;
+    flex-direction: column;
+    label{
+        border: 1px solid var(--Green-600);
+        padding: 0.75rem;
+        display: flex;
+        border-radius: 5px;
+        align-items: center;
+        input{
+            margin: 0 0.75rem;
+            width: 20px;
+            height: 20px;
+            &:checked{
+                appearance: none;
+                background-image: url("./assets/images/icon-radio-selected.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    label:first-of-type{
+        margin-bottom: 1rem;
+    }
+}
+
+/* Chekbox Consent */
+
+.checkboxConsentArea{
+    margin: 1rem 0;
+    font-size: 14px;
+    margin-right: 1rem;
+}
+
+.gridCheck{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    p{
+        line-height: 1.5rem;
+    }
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    &:checked{
+        appearance: none;
+        background-image: url("./assets/images/icon-checkbox-check.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Submit */
+
+input[type="submit"]{
+    font-weight: 700;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--Green-600);
+    color: var(--White);
+}
+
+/* Modal */
+
+.success{
+    display: none;
+    opacity: 0;
+    background-color: var(--Grey-900);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    animation: appear 5s linear;
+    div{
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        img{
+            margin-right: 0.5rem;
+        }
+    }
+    p{
+        color: var(--White);
+    }
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+
+    20%,
+    40%,
+    60%,
+    80%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@media (min-width: 426px){
+    body{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .container{
+        form{
+        display: grid;
+        grid-template-areas: 
+        "a b"
+        "c c"
+        "d d"
+        "e e"
+        "f f"
+        "g g";
+        }
+    }
+
+    .nameInputArea{
+        grid-area: a;
+        margin-right: 1rem;
+    }
+
+    .lastNameInputArea{
+        grid-area: b;
+    }
+
+    .emailInpuitArea{
+        grid-area: c;
+    }
+
+    .queryRadiosArea{
+        grid-area: d;
+    }
+
+    .messageArea{
+        grid-area: e;
+    }
+
+    .checkboxConsentArea{
+        grid-area: f;
+    }
+
+    .submitButton{
+        grid-area: g;
+    }
+
+    .queryFlex{
+        display: flex;
+        gap: 1rem;
+        label{
+            width: 100%;
+        }
+        label:first-of-type{
+            margin: 0;
+        }
+    }
+}
