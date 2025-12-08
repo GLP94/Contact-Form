@@ -1,25 +1,31 @@
-const query = document.querySelectorAll("input[name='query']");
-const name = document.getElementById("nameInput");
-const lastName = document.getElementById("lastNameInput");
-const email = document.getElementById("emailInput");
-const consent = document.getElementById("consentCheck");
-const submit = document.querySelector("input[type='submit']");
-const success = document.querySelector(".success");
+const queryInput = document.querySelectorAll("input[name='query']");
+const nameInput = document.getElementById("nameInput");
+const lastNameInput = document.getElementById("lastNameInput");
+const emailInput = document.getElementById("emailInput");
+const consentCheck = document.getElementById("consentCheck");
+const messageText = document.getElementById("messageBlock")
+const successModal = document.querySelector(".success");
+const form = document.querySelector("form");
 
-const errorCheck = Array.from(query).some(rad => rad.checked);
+const inputs = document.querySelectorAll("input, textarea");
 
-const successTimer = null;
+const errorChecks = () => {
+    let hasErrors = false;
 
-function error() {
+    
 
-}
+    return hasErrors;
+};
 
-function submitHandle(e) {
+let successTimer = null;
+
+form.addEventListener("submit", (e) => {
     e.preventDefault();
-    success.style.display = "block";
-    successTimer = setTimeout(() => {
-        success.style.display = "none";
-    }, 5000)
-}
-
-submit.addEventListener("click", submitHandle)
+    const errors = errorChecks();
+    if (!errors) {
+        successModal.style.display = "block";
+        successTimer = setTimeout(() => {
+            successModal.style.display = "none";
+        }, 5000);
+    }
+});

@@ -14,19 +14,19 @@
     <form action="#">
       <div class="nameInputArea">
         <p>First Name<span class="green"> *</span></p>
-        <input type="text" id="nameInput" required></input>
+        <input type="text" id="nameInput"></input>
         <p class="req">This field is required</p>
       </div>
       
       <div class="lastNameInputArea">
         <p>Last Name<span class="green"> *</span></p>
-        <input type="text"  id="lastNameInput" required></input>
+        <input type="text"  id="lastNameInput"></input>
         <p class="req">This field is required</p>
       </div>
     
       <div class="emailInpuitArea">
         <p>Email Address<span class="green"> *</span></p>
-        <input type="email"  id="emailInput" required></input>
+        <input type="text"  id="emailInput"></input>
         <p class="req">This field is required</p>
         <p class="reqEmail">Please enter a valid email address</p>
       </div>
@@ -34,15 +34,15 @@
       <div class="queryRadiosArea">
         <p>Query Type<span class="green"> *</span></p>
         <div class="queryFlex">
-          <label><input type="radio" name="query" required>General Enquiry</input></label>
-          <label><input type="radio" name="query">Support Request</input></label>
+          <label tabindex="0"><input type="radio" name="query" tabindex="-1"></input>General Enquiry</label>
+          <label tabindex="0"><input type="radio" name="query" tabindex="-1"></input>Support Request</label>
         </div>
         <p class="req">Please select a query type</p>
       </div>
       
       <div class="messageArea">
         <p>Message<span class="green"> *</span></p>
-        <textarea required></textarea>
+        <textarea id="messageBlock"></textarea>
         <p class="req">This field is required</p>
       </div>
 

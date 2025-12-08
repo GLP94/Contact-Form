@@ -1,13 +1,13 @@
-:root{
---Green-200: hsl(148, 38%, 91%);
---Green-600: hsl(169, 82%, 27%);
---Red: hsl(0, 66%, 54%);
---White: hsl(0, 0%, 100%);
---Grey-500: hsl(186, 15%, 59%);
---Grey-900: hsl(187, 24%, 22%);
+:root {
+    --Green-200: hsl(148, 38%, 91%);
+    --Green-600: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 54%);
+    --White: hsl(0, 0%, 100%);
+    --Grey-500: hsl(186, 15%, 59%);
+    --Grey-900: hsl(187, 24%, 22%);
 }
 
-@font-face{
+@font-face {
     font-family: "Karla";
     src:
         local("Karla"),
@@ -15,7 +15,7 @@
     font-weight: 400;
 }
 
-@font-face{
+@font-face {
     font-family: "Karla";
     src:
         local("Karla"),
@@ -23,20 +23,22 @@
     font-weight: 700;
 }
 
-*, ::after, ::before{
+*,
+::after,
+::before {
     box-sizing: border-box;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-body{
+body {
     font-family: "Karla", sans-serif;
     background-color: var(--Green-200);
     display: flex;
@@ -46,73 +48,114 @@ body{
 
 h1,
 p,
-label{
+label {
     color: var(--Grey-900);
 }
 
-h1{
-    margin-bottom: 1rem;
+h1 {
+    margin-bottom: 2rem;
 }
 
-.green{
+.green {
     color: var(--Green-600);
 }
 
 input[type="text"],
 input[type="email"],
-textarea{
+textarea {
     width: 100%;
     padding: 1rem 0.5rem;
     border-radius: 5px;
-    border: 1px solid var(--Green-600);
+    border: 1px solid var(--Grey-500);
+
+    &:active {
+        border: 1px solid var(--Green-600);
+    }
+
+    &:focus {
+        border: 1px solid var(--Green-600);
+    }
+
+    &:hover{
+        border: 1px solid var(--Green-600);
+    }
 }
 
-textarea{
-    height: 15rem;
+textarea {
+    height: 5rem;
+    border: 1px solid var(--Grey-500);
+
+    &:active {
+        border: 1px solid var(--Green-600);
+    }
+
+    &:focus {
+        border: 1px solid var(--Green-600);
+    }
 }
 
 .req,
-.reqEmail{
+.reqEmail {
     display: none;
     color: var(--Red);
     margin-top: 0.5rem;
-    &:last-of-type{
-        margin: 0;
-    }
+}
+
+.req:last-of-type,
+.reqEmail:last-of-type {
+    margin: 0;
+}
+
+input.error:not([type="submit"], [type="checkbox"], [type="radio"]),
+textarea.error {
+    border: 1px solid var(--Red) !important;
 }
 
 /* Container */
 
-.container{
+.container {
     width: 100%;
     max-width: 40rem;
     padding: 1rem;
-    margin: 1rem;
+    margin: 2rem 1rem;
     border-radius: 10px;
     background-color: var(--White);
 }
 
-p:not(.req, .gridCheck, .success){
+p:not(.req, .gridCheck, .success) {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
 
 /* Query */
 
-.queryRadiosArea{
+.queryRadiosArea {
     display: flex;
     flex-direction: column;
-    label{
+
+    label {
         border: 1px solid var(--Green-600);
         padding: 0.75rem;
         display: flex;
         border-radius: 5px;
         align-items: center;
-        input{
+        border: 1px solid var(--Grey-500);
+
+
+        &:active {
+            border: 1px solid var(--Green-600);
+        }
+
+        &:focus {
+            border: 1px solid var(--Green-600);
+        }
+
+        input {
             margin: 0 0.75rem;
             width: 20px;
             height: 20px;
-            &:checked{
+
+            &:checked {
                 appearance: none;
                 background-image: url("./assets/images/icon-radio-selected.svg");
                 background-size: contain;
@@ -121,33 +164,41 @@ p:not(.req, .gridCheck, .success){
                 height: 20px;
             }
         }
+
     }
-    label:first-of-type{
+
+    label:has(input:checked){
+        background-color: var(--Green-200);
+    }
+
+    label:first-of-type {
         margin-bottom: 1rem;
     }
 }
 
 /* Chekbox Consent */
 
-.checkboxConsentArea{
+.checkboxConsentArea {
     margin: 1rem 0;
     font-size: 14px;
     margin-right: 1rem;
 }
 
-.gridCheck{
+.gridCheck {
     display: flex;
     align-items: center;
     gap: 1rem;
-    p{
+
+    p {
         line-height: 1.5rem;
     }
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    &:checked{
+
+    &:checked {
         appearance: none;
         background-image: url("./assets/images/icon-checkbox-check.svg");
         background-size: contain;
@@ -157,7 +208,7 @@ input[type="checkbox"]{
 
 /* Submit */
 
-input[type="submit"]{
+input[type="submit"] {
     font-weight: 700;
     width: 100%;
     padding: 1rem;
@@ -165,11 +216,15 @@ input[type="submit"]{
     border: none;
     background-color: var(--Green-600);
     color: var(--White);
+
+    &:hover{
+        background-color: var(--Grey-900);
+    }
 }
 
 /* Modal */
 
-.success{
+.success {
     display: none;
     opacity: 0;
     background-color: var(--Grey-900);
@@ -179,92 +234,97 @@ input[type="submit"]{
     position: fixed;
     top: 0;
     animation: appear 5s linear;
-    div{
+
+    div {
         display: flex;
         align-items: center;
         font-weight: 700;
         margin-bottom: 1rem;
-        img{
+
+        img {
             margin-right: 0.5rem;
         }
     }
-    p{
+
+    p {
         color: var(--White);
     }
 }
 
-@keyframes appear{
-    0%{
+@keyframes appear {
+    0% {
         opacity: 0;
     }
 
     20%,
     40%,
     60%,
-    80%{
+    80% {
         opacity: 1;
     }
 
-    100%{
+    100% {
         opacity: 0;
     }
 }
 
-@media (min-width: 426px){
-    body{
+@media (min-width: 426px) {
+    body {
         height: 100vh;
         width: 100vw;
     }
 
-    .container{
-        form{
-        display: grid;
-        grid-template-areas: 
-        "a b"
-        "c c"
-        "d d"
-        "e e"
-        "f f"
-        "g g";
+    .container {
+        form {
+            display: grid;
+            grid-template-areas:
+                "a b"
+                "c c"
+                "d d"
+                "e e"
+                "f f"
+                "g g";
         }
     }
 
-    .nameInputArea{
+    .nameInputArea {
         grid-area: a;
         margin-right: 1rem;
     }
 
-    .lastNameInputArea{
+    .lastNameInputArea {
         grid-area: b;
     }
 
-    .emailInpuitArea{
+    .emailInpuitArea {
         grid-area: c;
     }
 
-    .queryRadiosArea{
+    .queryRadiosArea {
         grid-area: d;
     }
 
-    .messageArea{
+    .messageArea {
         grid-area: e;
     }
 
-    .checkboxConsentArea{
+    .checkboxConsentArea {
         grid-area: f;
     }
 
-    .submitButton{
+    .submitButton {
         grid-area: g;
     }
 
-    .queryFlex{
+    .queryFlex {
         display: flex;
         gap: 1rem;
-        label{
+
+        label {
             width: 100%;
         }
-        label:first-of-type{
+
+        label:first-of-type {
             margin: 0;
         }
     }
