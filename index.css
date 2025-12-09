@@ -53,7 +53,7 @@ label {
 }
 
 h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .green {
@@ -82,7 +82,7 @@ textarea {
 }
 
 textarea {
-    height: 5rem;
+    height: 15rem;
     border: 1px solid var(--Grey-500);
 
     &:active {
@@ -101,13 +101,7 @@ textarea {
     margin-top: 0.5rem;
 }
 
-.req:last-of-type,
-.reqEmail:last-of-type {
-    margin: 0;
-}
-
-input.error:not([type="submit"], [type="checkbox"], [type="radio"]),
-textarea.error {
+.error{
     border: 1px solid var(--Red) !important;
 }
 
@@ -122,7 +116,7 @@ textarea.error {
     background-color: var(--White);
 }
 
-p:not(.req, .gridCheck, .success) {
+p:not(.req, .gridCheck, #tc, #ms, .reqEmail) {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
@@ -140,6 +134,10 @@ p:not(.req, .gridCheck, .success) {
         border-radius: 5px;
         align-items: center;
         border: 1px solid var(--Grey-500);
+
+        &:hover{
+            border: 1px solid var(--Green-600);
+        }
 
 
         &:active {
@@ -179,18 +177,16 @@ p:not(.req, .gridCheck, .success) {
 /* Chekbox Consent */
 
 .checkboxConsentArea {
-    margin: 1rem 0;
-    font-size: 14px;
+    margin: 2rem 0;
     margin-right: 1rem;
 }
 
 .gridCheck {
     display: flex;
     align-items: center;
-    gap: 1rem;
 
-    p {
-        line-height: 1.5rem;
+    input {
+        margin-right: 1rem;
     }
 }
 
@@ -228,7 +224,7 @@ input[type="submit"] {
     display: none;
     opacity: 0;
     background-color: var(--Grey-900);
-    padding: 1rem;
+    padding: 2rem;
     margin: 1rem;
     border-radius: 10px;
     position: fixed;
@@ -246,24 +242,32 @@ input[type="submit"] {
         }
     }
 
-    p {
+    p, h2 {
         color: var(--White);
     }
 }
 
 @keyframes appear {
     0% {
+        top: -10px;
         opacity: 0;
     }
 
-    20%,
+    20%{
+        top: 0px;
+        opacity: 1;
+    }
+
+
     40%,
     60%,
     80% {
+        top: 0px;
         opacity: 1;
     }
 
     100% {
+        top: -10px;
         opacity: 0;
     }
 }
@@ -272,6 +276,10 @@ input[type="submit"] {
     body {
         height: 100vh;
         width: 100vw;
+    }
+
+    textarea{
+        height: 5rem;
     }
 
     .container {

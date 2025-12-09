@@ -9,60 +9,60 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container" aria-label="Contact Form">
     <h1>Contact Us</h1>
     <form action="#">
       <div class="nameInputArea">
-        <p>First Name<span class="green"> *</span></p>
-        <input type="text" id="nameInput"></input>
-        <p class="req">This field is required</p>
+        <p id="fn">First Name<span class="green"> *</span></p>
+        <input type="text" id="nameInput" aria-labelledby="fn"></input>
+        <p class="req" role="alert">This field is required</p>
       </div>
       
       <div class="lastNameInputArea">
-        <p>Last Name<span class="green"> *</span></p>
-        <input type="text"  id="lastNameInput"></input>
-        <p class="req">This field is required</p>
+        <p id="ln">Last Name<span class="green"> *</span></p>
+        <input type="text"  id="lastNameInput" aria-labelledby="ln"></input>
+        <p class="req" role="alert">This field is required</p>
       </div>
     
       <div class="emailInpuitArea">
-        <p>Email Address<span class="green"> *</span></p>
-        <input type="text"  id="emailInput"></input>
-        <p class="req">This field is required</p>
-        <p class="reqEmail">Please enter a valid email address</p>
+        <p id="ea">Email Address<span class="green"> *</span></p>
+        <input type="text"  id="emailInput" aria-labelledby="ea"></input>
+        <p class="req" role="alert">This field is required</p>
+        <p class="reqEmail" role="alert">Please enter a valid email address</p>
       </div>
 
       <div class="queryRadiosArea">
-        <p>Query Type<span class="green"> *</span></p>
+        <p id="qt">Query Type<span class="green"> *</span></p>
         <div class="queryFlex">
-          <label tabindex="0"><input type="radio" name="query" tabindex="-1"></input>General Enquiry</label>
-          <label tabindex="0"><input type="radio" name="query" tabindex="-1"></input>Support Request</label>
+          <label><input type="radio" name="query" aria-labelledby="qt"></input>General Enquiry</label>
+          <label><input type="radio" name="query" aria-labelledby="qt"></input>Support Request</label>
         </div>
-        <p class="req">Please select a query type</p>
+        <p class="req" role="alert">Please select a query type</p>
       </div>
       
       <div class="messageArea">
-        <p>Message<span class="green"> *</span></p>
-        <textarea id="messageBlock"></textarea>
-        <p class="req">This field is required</p>
+        <p id="me">Message<span class="green"> *</span></p>
+        <textarea id="messageBlock" aria-labelledby="me"></textarea>
+        <p class="req" role="alert">This field is required</p>
       </div>
 
       <div class="checkboxConsentArea">
         <label for="consentCheck" class="gridCheck">
           <input type="checkbox" id="consentCheck"></input>
-          <p>I consent to being contacted by the team<span class="green"> *</span></p>
+          <span>I consent to being contacted by the team<span class="green"> *</span></span>
         </label>
-        <p class="req">To submit this form, please consent to being contacted</p>
+        <p class="req" role="alert">To submit this form, please consent to being contacted</p>
       </div>
 
       <input type="submit" value="Submit" class="submitButton"></input>
     </form>
   </div>
 
-  <div class="success">
+  <div class="success" role="alertdialog" aria-labelledby="ms" aria-describedby="tc">
     <div>
-      <img src="./assets/images/icon-success-check.svg"/><p>Message Sent!</p>
+      <img src="./assets/images/icon-success-check.svg"/><p id="ms">Message Sent!</p>
     </div>
-    <p>Thanks for completing the form. We'll be in touch soon!</p>
+    <p id="tc">Thanks for completing the form. We'll be in touch soon!</p>
   </div>
 
   <script src="index.js"></script>
