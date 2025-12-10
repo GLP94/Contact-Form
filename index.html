@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <div class="container" aria-label="Contact Form">
+  <main class="container" aria-label="Contact Form">
     <h1>Contact Us</h1>
     <form action="#">
       <div class="nameInputArea">
@@ -47,7 +47,7 @@
       </div>
 
       <div class="checkboxConsentArea">
-        <label for="consentCheck" class="gridCheck">
+        <label class="gridCheck">
           <input type="checkbox" id="consentCheck"></input>
           <span>I consent to being contacted by the team<span class="green"> *</span></span>
         </label>
@@ -60,10 +60,10 @@
 
   <div class="success" role="alertdialog" aria-labelledby="ms" aria-describedby="tc">
     <div>
-      <img src="./assets/images/icon-success-check.svg"/><p id="ms">Message Sent!</p>
+      <img src="./assets/images/icon-success-check.svg" alt="Icon Success" aria-hidden="true"/><p id="ms">Message Sent!</p>
     </div>
     <p id="tc">Thanks for completing the form. We'll be in touch soon!</p>
-  </div>
+  </main>
 
   <script src="index.js"></script>
 </body>

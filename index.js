@@ -1,9 +1,6 @@
 const queryInput = document.querySelectorAll("input[name='query']");
-const emailInput = document.getElementById("emailInput");
-
 const successModal = document.querySelector(".success");
 const form = document.querySelector("form");
-
 const inputs = document.querySelectorAll("input, textarea");
 
 const errorChecks = () => {
